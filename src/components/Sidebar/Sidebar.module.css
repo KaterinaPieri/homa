@@ -1,0 +1,155 @@
+.sidebar {
+  background-color: var(--bg-body);
+  border-left: 1px solid var(--border-primary);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  position: sticky;
+  top: 0;
+  height: 100vh;
+  flex-shrink: 0;
+  transition: width 0.3s ease;
+  overflow: hidden;
+}
+
+/* Closed state */
+.sidebar.closed {
+  width: 72px;
+  padding: 40px 24px 72px;
+  cursor: pointer;
+}
+
+/* Open state */
+.sidebar.open {
+  width: 400px;
+  padding: 40px 40px 72px;
+  align-items: flex-start;
+}
+
+/* ---- Closed state content ---- */
+.closedTop {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 56px;
+}
+
+.markWrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 24px;
+  height: 22px;
+  flex-shrink: 0;
+}
+
+.markWrapper img {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+.menuLabel {
+  writing-mode: vertical-rl;
+  transform: rotate(180deg);
+  font-size: 14px;
+  font-weight: 400;
+  letter-spacing: 0.7px;
+  text-transform: uppercase;
+  color: var(--text-primary);
+  white-space: nowrap;
+}
+
+.closedBottom {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 56px;
+}
+
+.hamburgerWrapper {
+  width: 48px;
+  height: 36px;
+  flex-shrink: 0;
+}
+
+.hamburgerWrapper img {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+/* ---- Open state content ---- */
+.openTop {
+  display: flex;
+  flex-direction: column;
+  gap: 80px;
+  width: 100%;
+}
+
+.logoSection {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.smallMark {
+  width: 13px;
+  height: 12px;
+  flex-shrink: 0;
+}
+
+.smallMark img {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+.mainMenu {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  width: 100%;
+}
+
+.pageDescription {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+  width: 100%;
+}
+
+.descriptionText {
+  font-size: 20px;
+  font-weight: 600;
+  line-height: 1.2;
+  color: var(--text-primary);
+  width: 100%;
+}
+
+.openBottom {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 56px;
+}
+
+.closeWrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 8px;
+}
+
+.closeIcon {
+  width: 24px;
+  height: 24px;
+}
+
+.closeIcon img {
+  display: block;
+  width: 100%;
+  height: 100%;
+}

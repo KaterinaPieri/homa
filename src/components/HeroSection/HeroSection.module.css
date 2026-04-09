@@ -1,0 +1,100 @@
+.hero {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  min-height: 600px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 132px 140px 80px;
+  overflow: hidden;
+  flex-shrink: 0;
+}
+
+.backgroundImage {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+}
+
+.backgroundImage img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.overlay {
+  position: absolute;
+  inset: 0;
+  background-color: var(--overlay-dark);
+}
+
+.topContent {
+  position: relative;
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  width: 100%;
+  z-index: 1;
+}
+
+.slogan {
+  font-size: 18px;
+  font-weight: 600;
+  line-height: 1.18;
+  color: var(--text-light);
+  max-width: 750px;
+  white-space: nowrap;
+}
+
+.bottomContent {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 88px;
+  width: 100%;
+  z-index: 1;
+}
+
+.carouselSteps {
+  width: 482px;
+  height: 4px;
+  flex-shrink: 0;
+}
+
+.carouselSteps img {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+.projectDetails {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.featuredInfo {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  color: var(--text-light);
+  white-space: nowrap;
+}
+
+.featuredLabel {
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 1.12;
+  text-transform: uppercase;
+}
+
+.featuredName {
+  font-size: 18px;
+  font-weight: 600;
+  line-height: 1.18;
+}

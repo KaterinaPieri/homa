@@ -1,0 +1,9 @@
+:root {
+  --bg-body: #ffeadb;
+  --text-primary: #94433b;
+  --text-light: #ffeadb;
+  --text-primary-hover: #7c362f;
+  --overlay-dark: rgba(53, 21, 18, 0.32);
+  --overlay-image: rgba(53, 21, 18, 0.12);
+  --border-primary: #94433b;
+}
