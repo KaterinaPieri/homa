@@ -1,4 +1,4 @@
-import styles from './ProjectItem.module.css';
+import './styles.scss';
 
 type ProjectItemProps = {
   code: string;
@@ -11,14 +11,14 @@ type ProjectItemProps = {
 
 export default function ProjectItem({ code, name, location, year, image, href = '#' }: ProjectItemProps) {
   return (
-    <a className={styles.projectItem} href={href}>
-      <div className={styles.projectDetails}>
-        <span className={styles.projectCode}>{code} * {name}</span>
-        <span className={styles.projectLocation}>{location}, {year}</span>
+    <a className="project_item" href={href}>
+      <div className="project_details">
+        <span className="project_code">{code} * {name}</span>
+        <span className="project_location">{location}, {year}</span>
       </div>
-      <div className={styles.imageWrapper}>
+      <div className="image_wrapper">
         <img src={image} alt={name} />
-        <div className={styles.imageOverlay} />
+        <div className="image_overlay" />
       </div>
     </a>
   );

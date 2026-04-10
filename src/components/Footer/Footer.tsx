@@ -1,28 +1,28 @@
-import styles from './Footer.module.css';
+import './styles.scss';
 
 export default function Footer() {
   return (
-    <footer className={styles.footer}>
-      <div className={styles.divider} />
-      <p className={styles.copyright}>HOMA © studio architects</p>
-      <div className={styles.bottomBar}>
-        <div className={styles.contactGroup}>
-          <span className={styles.groupLabel}>Contact</span>
-          <div className={styles.links}>
-            <a className={styles.footerLink} href="mailto:info@homastudioarchitects.com">
+    <footer className="footer">
+      <div className="divider" />
+      <p className="copyright">HOMA © studio architects</p>
+      <div className="bottom_bar">
+        <div className="contact_group">
+          <span className="group_label">Contact</span>
+          <div className="links">
+            <a className="footer_link" href="mailto:info@homastudioarchitects.com">
               info@homastudioarchitects.com
             </a>
-            <a className={styles.footerLink} href="tel:+35799203429">
+            <a className="footer_link" href="tel:+35799203429">
               +357 99 203 429
             </a>
           </div>
         </div>
-        <div className={styles.socialGroup}>
-          <span className={styles.groupLabel}>Follow us</span>
-          <div className={styles.links}>
-            <a className={styles.footerLink} href="#" target="_blank" rel="noopener noreferrer">instagram</a>
-            <a className={styles.footerLink} href="#" target="_blank" rel="noopener noreferrer">facebook</a>
-            <a className={styles.footerLink} href="#" target="_blank" rel="noopener noreferrer">pinterest</a>
+        <div className="social_group">
+          <span className="group_label">Follow us</span>
+          <div className="links">
+            <a className="footer_link" href="#" target="_blank" rel="noopener noreferrer">instagram</a>
+            <a className="footer_link" href="#" target="_blank" rel="noopener noreferrer">facebook</a>
+            <a className="footer_link" href="#" target="_blank" rel="noopener noreferrer">pinterest</a>
           </div>
         </div>
       </div>

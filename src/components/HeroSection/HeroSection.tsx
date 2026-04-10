@@ -1,4 +1,4 @@
-import styles from './HeroSection.module.css';
+import './styles.scss';
 import Logo from '../Logo/Logo';
 import TextLink from '../TextLink/TextLink';
 import { heroImage, carouselSteps } from '../../assets/images';
@@ -15,25 +15,25 @@ export default function HeroSection({
   featuredProjectName = 'homa house',
 }: HeroSectionProps) {
   return (
-    <section className={styles.hero}>
-      <div className={styles.backgroundImage}>
+    <section className="hero">
+      <div className="background_image">
         <img src={heroImage} alt={featuredProjectName} />
-        <div className={styles.overlay} />
+        <div className="overlay" />
       </div>
 
-      <div className={styles.topContent}>
-        <p className={styles.slogan}>{slogan}</p>
+      <div className="top_content">
+        <p className="slogan">{slogan}</p>
         <Logo appearance="light" />
       </div>
 
-      <div className={styles.bottomContent}>
-        <div className={styles.carouselSteps}>
+      <div className="bottom_content">
+        <div className="carousel_steps">
           <img src={carouselSteps} alt="Carousel progress" />
         </div>
-        <div className={styles.projectDetails}>
-          <div className={styles.featuredInfo}>
-            <span className={styles.featuredLabel}>{featuredProjectLabel}</span>
-            <span className={styles.featuredName}>{featuredProjectName}</span>
+        <div className="project_details">
+          <div className="featured_info">
+            <span className="featured_label">{featuredProjectLabel}</span>
+            <span className="featured_name">{featuredProjectName}</span>
           </div>
           <TextLink text="view project" appearance="secondary" arrow="down" />
         </div>

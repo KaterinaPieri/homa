@@ -1,4 +1,4 @@
-import styles from './ProjectsSection.module.css';
+import './styles.scss';
 import ProjectItem from '../ProjectItem/ProjectItem';
 import { villaKazaImage, homaHouseImage, apbImage, villaBajImage } from '../../assets/images';
 
@@ -11,12 +11,12 @@ const PROJECTS = [
 
 export default function ProjectsSection() {
   return (
-    <section className={styles.section}>
-      <div className={styles.header}>
-        <h2 className={styles.title}>projects ({PROJECTS.length + 1})</h2>
-        <div className={styles.divider} />
+    <section className="projects_section">
+      <div className="header">
+        <h2 className="title">projects ({PROJECTS.length + 1})</h2>
+        <div className="divider" />
       </div>
-      <div className={styles.grid}>
+      <div className="grid">
         {PROJECTS.map((project) => (
           <ProjectItem
             key={project.code}

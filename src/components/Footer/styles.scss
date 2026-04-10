@@ -22,21 +22,21 @@
   white-space: nowrap;
 }
 
-.bottomBar {
+.bottom_bar {
   display: flex;
   align-items: flex-start;
   justify-content: space-between;
   width: 100%;
 }
 
-.contactGroup,
-.socialGroup {
+.contact_group,
+.social_group {
   display: flex;
   flex-direction: column;
   gap: 4px;
 }
 
-.groupLabel {
+.group_label {
   font-size: 14px;
   font-weight: 600;
   line-height: 1.12;
@@ -51,7 +51,7 @@
   align-items: flex-start;
 }
 
-.footerLink {
+.footer_link {
   font-size: 18px;
   font-weight: 600;
   line-height: 1.2;
@@ -60,8 +60,8 @@
   text-decoration: none;
   cursor: pointer;
   transition: color 0.2s ease;
-}
 
-.footerLink:hover {
-  color: var(--text-primary-hover);
+  &:hover {
+    color: var(--text-primary-hover);
+  }
 }

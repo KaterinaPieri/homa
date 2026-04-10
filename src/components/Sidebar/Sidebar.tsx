@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import styles from './Sidebar.module.css';
+import './styles.scss';
 import Logo from '../Logo/Logo';
 import MenuItem from '../MenuItem/MenuItem';
 import TextLink from '../TextLink/TextLink';
@@ -16,15 +16,15 @@ export default function Sidebar({ pageType = 'homepage' }: SidebarProps) {
 
   if (!isOpen) {
     return (
-      <aside className={`${styles.sidebar} ${styles.closed}`} onClick={() => setIsOpen(true)}>
-        <div className={styles.closedTop}>
-          <div className={styles.markWrapper}>
+      <aside className="sidebar closed" onClick={() => setIsOpen(true)}>
+        <div className="closed_top">
+          <div className="mark_wrapper">
             <img src={markIconAlt} alt="" />
           </div>
-          <span className={styles.menuLabel}>MENU</span>
+          <span className="menu_label">MENU</span>
         </div>
-        <div className={styles.closedBottom}>
-          <div className={styles.hamburgerWrapper}>
+        <div className="closed_bottom">
+          <div className="hamburger_wrapper">
             <img src={hamburgerIcon} alt="Open menu" />
           </div>
         </div>
@@ -33,31 +33,31 @@ export default function Sidebar({ pageType = 'homepage' }: SidebarProps) {
   }
 
   return (
-    <aside className={`${styles.sidebar} ${styles.open}`}>
-      <div className={styles.openTop}>
-        <div className={styles.logoSection}>
+    <aside className="sidebar open">
+      <div className="open_top">
+        <div className="logo_section">
           <Logo appearance="primary" />
-          <div className={styles.smallMark}>
+          <div className="small_mark">
             <img src={markIcon} alt="" />
           </div>
         </div>
-        <nav className={styles.mainMenu}>
+        <nav className="main_menu">
           {NAV_ITEMS.map((item) => (
             <MenuItem key={item} text={item} />
           ))}
         </nav>
         {pageType === 'homepage' && (
-          <div className={styles.pageDescription}>
-            <p className={styles.descriptionText}>
+          <div className="page_description">
+            <p className="description_text">
               homa designs are deeply connected to the earth, embodying the harmony and grounding it provides
             </p>
             <TextLink text="discover more" appearance="primary" arrow="up" />
           </div>
         )}
       </div>
-      <div className={styles.openBottom}>
-        <button className={styles.closeWrapper} onClick={() => setIsOpen(false)}>
-          <div className={styles.closeIcon}>
+      <div className="open_bottom">
+        <button className="close_wrapper" onClick={() => setIsOpen(false)}>
+          <div className="close_icon">
             <img src={closeIcon} alt="Close menu" />
           </div>
         </button>

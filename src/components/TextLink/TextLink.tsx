@@ -1,4 +1,4 @@
-import styles from './TextLink.module.css';
+import './styles.scss';
 import { arrowIcon, arrowLightIcon } from '../../assets/images';
 
 type TextLinkProps = {
@@ -18,11 +18,11 @@ export default function TextLink({
 }: TextLinkProps) {
   const isSecondary = appearance === 'secondary';
   return (
-    <button className={`${styles.link}${className ? ` ${className}` : ''}`} onClick={onClick}>
-      <span className={`${styles.text} ${isSecondary ? styles.secondary : styles.primary}`}>
+    <button className={`text_link${className ? ` ${className}` : ''}`} onClick={onClick}>
+      <span className={`text ${isSecondary ? 'secondary' : 'primary'}`}>
         {text}
       </span>
-      <span className={`${styles.arrowWrapper} ${styles[arrow]}`}>
+      <span className={`arrow_wrapper ${arrow}`}>
         <img alt="" src={isSecondary ? arrowLightIcon : arrowIcon} />
       </span>
     </button>
