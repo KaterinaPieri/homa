@@ -1,0 +1,52 @@
+.studio_section {
+  display: flex;
+  flex-direction: column;
+  padding: 132px 140px 80px;
+  width: 100%;
+  flex-shrink: 0;
+}
+
+.top_content {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.about_text {
+  display: flex;
+  flex-direction: column;
+  gap: 48px;
+  color: var(--text-primary);
+  max-width: 754px;
+}
+
+.text_block {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.section_heading {
+  font-size: 24px;
+  font-weight: 800;
+  line-height: 1.18;
+  color: var(--text-primary);
+}
+
+.body_text {
+  font-size: 18px;
+  font-weight: 600;
+  line-height: 1.18;
+  color: var(--text-primary);
+}
+
+.body_paragraphs {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  font-size: 18px;
+  font-weight: 600;
+  line-height: 1.18;
+  color: var(--text-primary);
+}

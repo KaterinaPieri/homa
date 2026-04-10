@@ -8,11 +8,12 @@ import { markIcon, markIconAlt, hamburgerIcon, closeIcon } from '@/assets/images
 
 type SidebarProps = {
   pageType?: 'homepage' | 'project';
+  pageLabel?: string;
 };
 
 const NAV_ITEMS = ['projects', 'studio', 'contact'];
 
-export default function Sidebar({ pageType = 'homepage' }: SidebarProps) {
+export default function Sidebar({ pageType = 'homepage', pageLabel = 'MENU' }: SidebarProps) {
   const [isOpen, setIsOpen] = useState(false);
 
   if (!isOpen) {
@@ -22,7 +23,7 @@ export default function Sidebar({ pageType = 'homepage' }: SidebarProps) {
           <div className="mark_wrapper">
             <img src={markIconAlt} alt="" />
           </div>
-          <span className="menu_label">MENU</span>
+          <span className="menu_label">{pageLabel}</span>
         </div>
         <div className="closed_bottom">
           <div className="hamburger_wrapper">
