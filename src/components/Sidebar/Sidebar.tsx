@@ -11,7 +11,11 @@ type SidebarProps = {
   pageLabel?: string;
 };
 
-const NAV_ITEMS = ['projects', 'studio', 'contact'];
+const NAV_ITEMS = [
+  { label: 'projects', href: '/#projects' },
+  { label: 'studio',   href: '/studio' },
+  { label: 'contact',  href: '/#contact' },
+];
 
 export default function Sidebar({ pageType = 'homepage', pageLabel = 'MENU' }: SidebarProps) {
   const [isOpen, setIsOpen] = useState(false);
@@ -45,7 +49,7 @@ export default function Sidebar({ pageType = 'homepage', pageLabel = 'MENU' }: S
         </div>
         <nav className="main_menu">
           {NAV_ITEMS.map((item) => (
-            <MenuItem key={item} text={item} />
+            <MenuItem key={item.label} text={item.label} href={item.href} />
           ))}
         </nav>
         {pageType === 'homepage' && (

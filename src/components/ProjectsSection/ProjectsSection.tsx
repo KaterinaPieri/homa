@@ -8,7 +8,7 @@ type ProjectsSectionProps = {
 export default function ProjectsSection({ variant = 'default' }: ProjectsSectionProps) {
   const isBordered = variant === 'bordered';
   return (
-    <section className="projects_section">
+    <section id="projects" className="projects_section">
       {isBordered && <div className="divider" />}
       <div className={isBordered ? 'header header_bordered' : 'header'}>
         <h2 className="title">projects ({TOTAL_PROJECTS})</h2>

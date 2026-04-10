@@ -1,12 +1,14 @@
+import Link from 'next/link';
+
 type MenuItemProps = {
   text: string;
-  onClick?: () => void;
+  href: string;
 };
 
-export default function MenuItem({ text, onClick }: MenuItemProps) {
+export default function MenuItem({ text, href }: MenuItemProps) {
   return (
-    <button className="menu_item" onClick={onClick}>
+    <Link className="menu_item" href={href}>
       <span className="label">{text}</span>
-    </button>
+    </Link>
   );
 }
