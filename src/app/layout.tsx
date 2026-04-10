@@ -1,6 +1,7 @@
 import type { Metadata } from 'next';
 import './globals.scss';
 
+// eslint-disable-next-line react-refresh/only-export-components
 export const metadata: Metadata = {
   title: 'HOMA Studio Architects',
   description: 'Creating spaces that are more than just structures.',

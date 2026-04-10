@@ -43,3 +43,16 @@ button {
   color: inherit;
   padding: 0;
 }
+
+.page {
+  display: flex;
+  align-items: flex-start;
+  min-height: 100vh;
+}
+
+.main_content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+}
