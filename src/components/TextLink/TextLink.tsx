@@ -1,5 +1,4 @@
-import './styles.scss';
-import { arrowIcon, arrowLightIcon } from '../../assets/images';
+import { arrowIcon, arrowLightIcon } from '@/assets/images';
 
 type TextLinkProps = {
   text: string;

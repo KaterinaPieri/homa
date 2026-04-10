@@ -1,0 +1,11 @@
+:HL["/_next/static/chunks/0j-grki79uu1i.css","style"]
+:HL["https://fonts.googleapis.com/css2?family=Figtree:wght@400;600&display=swap","style"]
+:HL["https://www.figma.com/api/mcp/asset/3e72254e-12cf-4357-9d01-9625873612c7","image"]
+:HL["/logo-light.svg","image"]
+:HL["https://www.figma.com/api/mcp/asset/4d009712-a16e-4e1a-bbf6-ca75467e7da1","image"]
+:HL["https://www.figma.com/api/mcp/asset/465964f6-3179-4e70-acf1-8ed4522345e5","image"]
+:HL["https://www.figma.com/api/mcp/asset/186b5349-c119-467f-adeb-f62f372ee600","image"]
+:HL["https://www.figma.com/api/mcp/asset/73648713-6277-440f-985d-fef7ff55fe8a","image"]
+:HL["https://www.figma.com/api/mcp/asset/a184d7dc-f830-4ae1-b3ec-fa3b1638522a","image"]
+:HL["https://www.figma.com/api/mcp/asset/f59ffa9b-2dd6-432e-bc9c-5dbec3e6d33b","image"]
+0:{"tree":{"name":"","param":null,"prefetchHints":16,"slots":{"children":{"name":"__PAGE__","param":null,"prefetchHints":0,"slots":null}}},"staleTime":300,"buildId":"2qB_10aZvmamS4iTTFhca"}

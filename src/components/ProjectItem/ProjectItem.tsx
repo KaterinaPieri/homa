@@ -1,5 +1,3 @@
-import './styles.scss';
-
 type ProjectItemProps = {
   code: string;
   name: string;

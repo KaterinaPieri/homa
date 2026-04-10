@@ -1,9 +1,10 @@
+'use client';
+
 import { useState } from 'react';
-import './styles.scss';
-import Logo from '../Logo/Logo';
-import MenuItem from '../MenuItem/MenuItem';
-import TextLink from '../TextLink/TextLink';
-import { markIcon, markIconAlt, hamburgerIcon, closeIcon } from '../../assets/images';
+import Logo from '@/components/Logo/Logo';
+import MenuItem from '@/components/MenuItem/MenuItem';
+import TextLink from '@/components/TextLink/TextLink';
+import { markIcon, markIconAlt, hamburgerIcon, closeIcon } from '@/assets/images';
 
 type SidebarProps = {
   pageType?: 'homepage' | 'project';

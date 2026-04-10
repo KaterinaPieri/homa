@@ -1,6 +1,5 @@
-import './styles.scss';
-import ProjectItem from '../ProjectItem/ProjectItem';
-import { villaKazaImage, homaHouseImage, apbImage, villaBajImage } from '../../assets/images';
+import ProjectItem from '@/components/ProjectItem/ProjectItem';
+import { villaKazaImage, homaHouseImage, apbImage, villaBajImage } from '@/assets/images';
 
 const PROJECTS = [
   { code: '001', name: 'villa kaza', location: 'larnaca', year: 2023, image: villaKazaImage },

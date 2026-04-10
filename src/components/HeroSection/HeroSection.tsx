@@ -1,7 +1,6 @@
-import './styles.scss';
-import Logo from '../Logo/Logo';
-import TextLink from '../TextLink/TextLink';
-import { heroImage, carouselSteps } from '../../assets/images';
+import Logo from '@/components/Logo/Logo';
+import TextLink from '@/components/TextLink/TextLink';
+import { heroImage, carouselSteps } from '@/assets/images';
 
 type HeroSectionProps = {
   slogan?: string;
