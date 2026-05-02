@@ -5,10 +5,16 @@
 @use '../components/TextLink/styles' as text-link;
 @use '../components/Sidebar/styles' as sidebar;
 @use '../components/HeroSection/styles' as hero-section;
+@use '../components/CarouselSteps/styles' as carousel-steps;
 @use '../components/ProjectItem/styles' as project-item;
+@use '../components/ProjectInfoLabel/styles' as project-info-label;
 @use '../components/ProjectsSection/styles' as projects-section;
 @use '../components/Footer/styles' as footer;
 @use '../components/StudioSection/styles' as studio-section;
+@use '../components/ProjectSections/styles' as project-sections;
+@use '../components/ZoomImage/styles' as zoom-image;
+@use '../components/Cursor/styles' as cursor;
+@use '../components/LoadingScreen/styles' as loading-screen;
 
 // Base styles
 *,
@@ -24,11 +30,23 @@ body {
   height: 100%;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+}
+
 body {
   font-family: 'Figtree', sans-serif;
+  font-size: var(--type-body);
   background-color: var(--bg-body);
-  color: var(--text-primary);
+  color: var(--text-body-primary);
   -webkit-font-smoothing: antialiased;
+  line-height: 118%;
 }
 
 a {

@@ -1,0 +1,14 @@
+<svg width="var(--arrow-width)" height="var(--arrow-width)" viewBox="0 0 var(--arrow-width) var(--arrow-width)" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g clip-path="url(#clip0_2044_178)">
+<path d="M0.789429 0.789459L13.5394 13.5395" stroke="var(--arrow-color)" stroke-width="2"/>
+<mask id="path-2-inside-1_2044_178" fill="white">
+<path d="M-0.312622 14.6875H14.6874L14.6874 -0.312469"/>
+</mask>
+<path d="M14.6874 14.6875V16.6875H16.6874V14.6875H14.6874ZM-0.312622 14.6875L-0.312622 16.6875H14.6874V14.6875L14.6874 12.6875H-0.312622L-0.312622 14.6875ZM14.6874 14.6875H16.6874V-0.312469H14.6874H12.6874L12.6874 14.6875H14.6874Z" fill="var(--arrow-color)" mask="url(#path-2-inside-1_2044_178)"/>
+</g>
+<defs>
+<clipPath id="clip0_2044_178">
+<rect width="var(--arrow-width)" height="var(--arrow-width)" fill="white"/>
+</clipPath>
+</defs>
+</svg>

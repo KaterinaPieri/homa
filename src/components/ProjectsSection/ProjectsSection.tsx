@@ -23,6 +23,7 @@ export default function ProjectsSection({ variant = 'default' }: ProjectsSection
             location={project.location}
             year={project.year}
             image={project.image}
+            href={project.href}
           />
         ))}
       </div>

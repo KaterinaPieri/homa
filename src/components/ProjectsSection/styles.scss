@@ -13,10 +13,9 @@
 }
 
 .title {
-  font-size: 18px;
   font-weight: 600;
-  line-height: 1.18;
-  color: var(--text-primary);
+  color: var(--text-body-primary);
+  font-size: var(--type-body);
   white-space: nowrap;
 }
 

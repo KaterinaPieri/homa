@@ -1,0 +1,27 @@
+.project_info {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  align-items: flex-start;
+}
+
+.project_info--primary {
+  color: var(--text-body-primary);
+}
+
+.project_info--light {
+  color: var(--text-body-light);
+}
+
+.project_info_label {
+  font-size: var(--type-label);
+  font-weight: 400;
+  line-height: 112%;
+  text-transform: uppercase;
+}
+
+.project_info_value {
+  font-size: var(--type-body);
+  font-weight: 600;
+  line-height: 118%;
+}

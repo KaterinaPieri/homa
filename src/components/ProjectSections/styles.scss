@@ -1,0 +1,315 @@
+.project_sections {
+  display: flex;
+  flex-direction: column;
+  gap: var(--gap-project_sections-small);
+  width: 100%;
+  padding-bottom: var(--padding-project-bottom);
+
+  .zoom_image.is-visible img:hover {
+    transform: scale(1.05);
+  }
+}
+
+/* Hero ─ full-bleed within main_content */
+.ps_hero {
+  width: 100%;
+
+  img {
+    width: 100%;
+    height: auto;
+    max-height: 90vh;
+    object-fit: cover;
+    display: block;
+  }
+}
+
+/* Header strip ─ project name | location */
+.ps_header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  padding: 0 var(--padding-project-right) 0 var(--padding-project-left);
+}
+
+.ps_header_label {
+  font-size: var(--type-label);
+  font-weight: 400;
+  letter-spacing: 0.7px;
+  line-height: 1.12;
+  text-transform: uppercase;
+  color: var(--text-body-primary);
+}
+
+.ps_header_value {
+  font-weight: 600;
+}
+
+/* Full-width image */
+.ps_full_image {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  padding: 0 var(--padding-project-right) 0 var(--padding-project-left);
+
+  img {
+    width: 100%;
+    height: auto;
+    display: block;
+  }
+}
+
+/* Centered image (drawings, floor plans) */
+.ps_centered_image {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+  padding: 0 var(--padding-project-right) 0 var(--padding-project-left);
+
+  img {
+    width: 100%;
+    max-width: 520px;
+    height: auto;
+    display: block;
+  }
+}
+
+/* Two-up image pair */
+.ps_image_pair {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--gap-projects-horizontal);
+  padding: 0 var(--padding-project-right) 0 var(--padding-project-left);
+
+  img {
+    width: 100%;
+    height: auto;
+    display: block;
+  }
+}
+
+/* Caption */
+.ps_caption {
+  font-size: var(--type-label);
+  color: var(--text-body-primary);
+  opacity: 0.7;
+}
+
+/* Split section ─ two configurable columns */
+.ps_split {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--gap-projects-horizontal);
+  padding: 0 var(--padding-project-right) 0 var(--padding-project-left);
+  align-items: start;
+
+  &[data-align='center'] { align-items: center; }
+  &[data-align='bottom'] { align-items: end; }
+}
+
+.ps_split_col {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+}
+
+.ps_split_image {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.ps_split_text {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  font-weight: 600;
+  color: var(--text-body-primary);
+  font-size: var(--type-body);
+  max-width: 520px;
+}
+
+.ps_split_heading {
+  font-size: var(--type-h2);
+  font-weight: 800;
+  color: var(--text-body-primary);
+}
+
+.ps_split_imagetext {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+
+  img {
+    width: 100%;
+    height: auto;
+    display: block;
+  }
+}
+
+.ps_split_stack {
+  display: flex;
+  flex-direction: column;
+  gap: var(--gap-projects-horizontal);
+
+  img {
+    width: 100%;
+    height: auto;
+    display: block;
+  }
+}
+
+.ps_stack_pair {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--gap-projects-horizontal);
+}
+
+@media screen and (max-width: 768px) {
+  .ps_split,
+  .ps_image_pair,
+  .ps_stack_pair {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* ────────────────────────────────────────────────────────────────────────────
+ * Lightbox slider
+ * ────────────────────────────────────────────────────────────────────────── */
+
+.lightbox {
+  position: fixed;
+  inset: 0;
+  z-index: 10000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 64px 96px;
+  background-color: var(--bg-overlay);
+  animation: lightbox_fade_in 220ms ease-out;
+  touch-action: pan-y;
+  -webkit-user-select: none;
+  user-select: none;
+}
+
+@keyframes lightbox_fade_in {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+.lightbox_image_wrapper {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 320ms cubic-bezier(0.22, 1, 0.36, 1);
+  will-change: transform;
+
+  &.is-dragging {
+    transition: none;
+  }
+
+  img {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+    display: block;
+    animation: lightbox_image_in 320ms cubic-bezier(0.22, 1, 0.36, 1);
+    -webkit-user-drag: none;
+    pointer-events: none;
+  }
+}
+
+@keyframes lightbox_image_in {
+  from { opacity: 0; transform: scale(0.985); }
+  to   { opacity: 1; transform: scale(1); }
+}
+
+.lightbox_close,
+.lightbox_nav {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  border: 1px solid var(--color-secondary-5);
+  background-color: transparent;
+  color: var(--color-secondary-5);
+  font-size: 28px;
+  line-height: 1;
+  cursor: pointer;
+  transition:
+    background-color 220ms ease,
+    color 220ms ease,
+    transform 220ms cubic-bezier(0.22, 1, 0.36, 1);
+
+  &:hover {
+    background-color: var(--color-secondary-5);
+    color: var(--color-primary-base);
+  }
+}
+
+.lightbox_close {
+  top: 32px;
+  right: 32px;
+  font-size: 24px;
+}
+
+.lightbox_prev {
+  left: 32px;
+  top: 50%;
+  transform: translateY(-50%);
+
+  &:hover {
+    transform: translateY(-50%) translateX(-4px);
+  }
+}
+
+.lightbox_next {
+  right: 32px;
+  top: 50%;
+  transform: translateY(-50%);
+
+  &:hover {
+    transform: translateY(-50%) translateX(4px);
+  }
+}
+
+.lightbox_counter {
+  position: absolute;
+  bottom: 32px;
+  left: 50%;
+  transform: translateX(-50%);
+  color: var(--color-secondary-5);
+  font-size: var(--type-label);
+  font-weight: 400;
+  letter-spacing: 0.7px;
+  text-transform: uppercase;
+}
+
+@media screen and (max-width: 768px) {
+  .lightbox {
+    padding: 16px;
+  }
+
+  .lightbox_close,
+  .lightbox_nav {
+    width: 44px;
+    height: 44px;
+    font-size: 22px;
+  }
+
+  .lightbox_close {
+    top: 16px;
+    right: 16px;
+  }
+
+  .lightbox_prev { left: 12px; }
+  .lightbox_next { right: 12px; }
+
+  .lightbox_counter { bottom: 16px; }
+}

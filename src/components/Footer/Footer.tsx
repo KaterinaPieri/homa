@@ -1,6 +1,6 @@
-export default function Footer() {
+export default function Footer({ fullWidth }: { fullWidth?: boolean }) {
   return (
-    <footer className="footer">
+    <footer id="contact" className={`footer${fullWidth ? ' full_width' : ''}`}>
       <div className="divider" />
       <p className="copyright">HOMA © studio architects</p>
       <div className="bottom_bar">
@@ -10,16 +10,12 @@ export default function Footer() {
             <a className="footer_link" href="mailto:info@homastudioarchitects.com">
               info@homastudioarchitects.com
             </a>
-            <a className="footer_link" href="tel:+35799203429">
-              +357 99 203 429
-            </a>
           </div>
         </div>
         <div className="social_group">
           <span className="group_label">Follow us</span>
           <div className="links">
-            <a className="footer_link" href="#" target="_blank" rel="noopener noreferrer">instagram</a>
-            <a className="footer_link" href="#" target="_blank" rel="noopener noreferrer">facebook</a>
+            <a className="footer_link" href="https://www.instagram.com/homastudioarchitects/" target="_blank" rel="noopener noreferrer">instagram</a>
             <a className="footer_link" href="#" target="_blank" rel="noopener noreferrer">pinterest</a>
           </div>
         </div>

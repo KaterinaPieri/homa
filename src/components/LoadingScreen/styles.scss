@@ -1,0 +1,27 @@
+.loading_screen {
+  position: fixed;
+  inset: 0;
+  z-index: 9998;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--color-primary-base);
+  animation: loading_screen_fadeout 1000ms ease 1500ms forwards;
+}
+
+@keyframes loading_screen_fadeout {
+  to {
+    opacity: 0;
+    visibility: hidden;
+  }
+}
+
+.splash-skipped .loading_screen {
+  display: none;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .loading_screen {
+    display: none;
+  }
+}

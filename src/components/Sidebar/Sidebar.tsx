@@ -1,71 +1,121 @@
 'use client';
 
-import { useState } from 'react';
+import { useEffect, useRef, useState, type MouseEvent } from 'react';
+import Link from 'next/link';
+import { usePathname } from 'next/navigation';
 import Logo from '@/components/Logo/Logo';
 import MenuItem from '@/components/MenuItem/MenuItem';
-import TextLink from '@/components/TextLink/TextLink';
-import { markIcon, markIconAlt, hamburgerIcon, closeIcon } from '@/assets/images';
+import ProjectInfoLabel from '../ProjectInfoLabel/ProjectInfoLabel';
+import { PROJECT_PAGES, type ProjectMeta } from '@/data/projects';
 
-type SidebarProps = {
-  pageType?: 'homepage' | 'project';
-  pageLabel?: string;
+type NavItem = {
+  label: string;
+  href: string;
+  onClick?: (e: MouseEvent<HTMLAnchorElement>) => void;
 };
 
-const NAV_ITEMS = [
+const NAV_ITEMS: NavItem[] = [
   { label: 'projects', href: '/#projects' },
   { label: 'studio',   href: '/studio' },
-  { label: 'contact',  href: '/#contact' },
+  {
+    label: 'contact',
+    href: '#contact',
+    onClick: (e) => {
+      e.preventDefault();
+      scrollToElement('contact', { behavior: 'smooth', block: 'end' });
+    },
+  },
 ];
 
-export default function Sidebar({ pageType = 'homepage', pageLabel = 'MENU' }: SidebarProps) {
-  const [isOpen, setIsOpen] = useState(false);
+type SidebarConfig = {
+  pageLabel: string;
+  pageDescription?: string;
+  projectDetails?: ProjectMeta;
+};
 
-  if (!isOpen) {
-    return (
-      <aside className="sidebar closed" onClick={() => setIsOpen(true)}>
-        <div className="closed_top">
-          <div className="mark_wrapper">
-            <img src={markIconAlt} alt="" />
-          </div>
-          <span className="menu_label">{pageLabel}</span>
-        </div>
-        <div className="closed_bottom">
-          <div className="hamburger_wrapper">
-            <img src={hamburgerIcon} alt="Open menu" />
-          </div>
-        </div>
-      </aside>
-    );
+function scrollToElement(id: string, options?: ScrollIntoViewOptions) {
+  const element = document.getElementById(id);
+  if (!element) return;
+  if (options?.block === 'end') {
+    const rect = element.getBoundingClientRect();
+    const top = rect.bottom + window.scrollY - window.innerHeight;
+    window.scrollTo({ top, behavior: options.behavior ?? 'auto' });
+    return;
   }
+  element.scrollIntoView(options);
+}
+
+function getSidebarConfig(pathname: string): SidebarConfig {
+  const projectMatch = pathname.match(/^\/project\/(.+)$/);
+  if (projectMatch) {
+    const slug = projectMatch[1];
+    const project = PROJECT_PAGES[slug];
+    if (project) {
+      return {
+        pageLabel: project.name.toUpperCase(),
+        pageDescription: project.description,
+        projectDetails: project.meta,
+      };
+    }
+    return { pageLabel: 'PROJECT' };
+  }
+  if (pathname === '/studio') {
+    return { pageLabel: 'STUDIO' };
+  }
+  return { pageLabel: 'MENU' };
+}
+
+export default function Sidebar() {
+  const pathname = usePathname();
+  const [isOpen, setIsOpen] = useState(false);
+  const prevPathnameRef = useRef(pathname);
+
+  useEffect(() => {
+    if (prevPathnameRef.current !== pathname) {
+      setIsOpen(false);
+      prevPathnameRef.current = pathname;
+    }
+  }, [pathname]);
+
+  const { pageLabel, pageDescription, projectDetails } = getSidebarConfig(pathname);
 
   return (
-    <aside className="sidebar open">
-      <div className="open_top">
-        <div className="logo_section">
-          <Logo appearance="primary" />
-          <div className="small_mark">
-            <img src={markIcon} alt="" />
-          </div>
-        </div>
-        <nav className="main_menu">
+    <aside className={`sidebar ${isOpen ? 'open' : 'closed'}`}>
+      <div className="sidebar_header">
+        <Link className="logo_section" href="/">
+          <Logo />
+          <img className="homa_mark" src="/mark-primary.svg" alt="Homa symbol" />
+        </Link>
+        <button type="button" className="menu_label" onClick={() => setIsOpen(true)}>{pageLabel}</button>
+      </div>
+      {isOpen &&
+        <nav className="main_menu" onClick={() => setIsOpen(false)}>
           {NAV_ITEMS.map((item) => (
-            <MenuItem key={item.label} text={item.label} href={item.href} />
+            <MenuItem key={item.label} text={item.label} href={item.href} onClick={item.onClick} />
           ))}
         </nav>
-        {pageType === 'homepage' && (
-          <div className="page_description">
-            <p className="description_text">
-              homa designs are deeply connected to the earth, embodying the harmony and grounding it provides
-            </p>
-            <TextLink text="discover more" appearance="primary" arrow="up" />
-          </div>
-        )}
-      </div>
-      <div className="open_bottom">
-        <button className="close_wrapper" onClick={() => setIsOpen(false)}>
-          <div className="close_icon">
-            <img src={closeIcon} alt="Close menu" />
-          </div>
+      }
+      {pageDescription &&
+        <div className="page_description">
+          <p className="description_text">
+            {pageDescription}
+          </p>
+        </div>
+      }
+      {projectDetails &&
+        <div className="sidebar_project_details">
+          <ProjectInfoLabel label="Location" value={projectDetails.location} />
+          <ProjectInfoLabel label="Typology" value={projectDetails.typology} />
+          <ProjectInfoLabel label="Client" value={projectDetails.client} />
+          <ProjectInfoLabel label="Budget" value={projectDetails.budget} />
+          <ProjectInfoLabel label="Built-up Area" value={projectDetails.builtArea} />
+          <ProjectInfoLabel label="Year" value={projectDetails.year} />
+        </div>
+      }
+      <div className="sidebar_footer">
+        <button type="button" onClick={() => setIsOpen(!isOpen)} className={`hamburger_wrapper ${isOpen ? 'close_icon' : 'hamburger_icon'}`}>
+          <span className="line"/>
+          <span className="line"/>
         </button>
       </div>
     </aside>

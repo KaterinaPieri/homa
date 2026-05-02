@@ -2,9 +2,13 @@
   display: flex;
   flex-direction: column;
   gap: 64px;
-  padding: 0 120px 40px 40px;
+  padding: 0 var(--padding-body-right) var(--padding-body-bottom) var(--padding-body-left);
   width: 100%;
   background-color: var(--bg-body);
+
+  &.full_width {
+    padding-right: var(--padding-body-right-sm);
+  }
 }
 
 .divider {
@@ -15,10 +19,8 @@
 }
 
 .copyright {
-  font-size: 18px;
   font-weight: 600;
-  line-height: 1.18;
-  color: var(--text-primary);
+  color: var(--text-body-primary);
   white-space: nowrap;
 }
 
@@ -37,10 +39,10 @@
 }
 
 .group_label {
-  font-size: 14px;
+  font-size: var(--type-label);
   font-weight: 600;
   line-height: 1.12;
-  color: var(--text-primary);
+  color: var(--text-body-primary);
   text-transform: uppercase;
   white-space: nowrap;
 }
@@ -52,16 +54,15 @@
 }
 
 .footer_link {
-  font-size: 18px;
   font-weight: 600;
   line-height: 1.2;
-  color: var(--text-primary);
+  color: var(--text-body-primary);
   white-space: nowrap;
   text-decoration: none;
   cursor: pointer;
   transition: color 0.2s ease;
 
   &:hover {
-    color: var(--text-primary-hover);
+    color: var(--text-accent-primary-hover);
   }
 }

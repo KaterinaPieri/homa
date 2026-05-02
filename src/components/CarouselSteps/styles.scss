@@ -1,0 +1,42 @@
+.carousel_steps {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-shrink: 0;
+}
+
+.carousel_step {
+  position: relative;
+  height: 4px;
+  width: 64px;
+  flex-shrink: 0;
+  overflow: hidden;
+  transition: width 0.4s ease;
+
+  &.active {
+    width: 220px;
+  }
+}
+
+.carousel_step .track {
+  position: absolute;
+  inset: 0;
+  background-color: rgba(255, 234, 219, 0.3);
+}
+
+.carousel_step .fill {
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  width: 0;
+  background-color: var(--text-body-light);
+  animation-name: carousel-step-progress;
+  animation-timing-function: linear;
+  animation-fill-mode: forwards;
+}
+
+@keyframes carousel-step-progress {
+  from { width: 0; }
+  to { width: 100%; }
+}
