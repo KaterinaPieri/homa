@@ -84,7 +84,7 @@ export default function Sidebar() {
       <div className="sidebar_header">
         <Link className="logo_section" href="/">
           <Logo />
-          <img className="homa_mark" src="/mark-primary.svg" alt="Homa symbol" />
+          <img className="homa_mark" src="/mark-primary.svg" alt="Homa symbol" onClick={isOpen ? () => setIsOpen(false) : undefined}/>
         </Link>
         <button type="button" className="menu_label" onClick={() => setIsOpen(true)}>{pageLabel}</button>
       </div>
