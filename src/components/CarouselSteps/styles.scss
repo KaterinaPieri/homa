@@ -8,13 +8,13 @@
 .carousel_step {
   position: relative;
   height: 4px;
-  width: 64px;
+  width: var(--width-carousel-step-idle);
   flex-shrink: 0;
   overflow: hidden;
   transition: width 0.4s ease;
 
   &.active {
-    width: 220px;
+    width: var(--width-carousel-step-active);
   }
 }
 

@@ -7,14 +7,13 @@
   border: none;
   padding: 0;
   font-family: inherit;
+  font-weight: 600;
 
   &.lg {
-    --arrow-width: calc(var(--type-icon-lg) + 1px);
     font-size: var(--type-accent-lg)
   }
 
   &.md {
-    --arrow-width: calc(var(--type-icon-sm) + 1px);
     font-size: var(--type-accent-sm);
   }
 
@@ -40,7 +39,6 @@
 }
 
 .text {
-  font-weight: 600;
   line-height: 1.2;
   white-space: nowrap;
 }

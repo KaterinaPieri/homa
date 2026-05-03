@@ -1,12 +1,13 @@
 'use client';
 
 import { useEffect, useRef, useState, type MouseEvent } from 'react';
-import Link from 'next/link';
+import Link, { LinkProps } from 'next/link';
 import { usePathname } from 'next/navigation';
 import Logo from '@/components/Logo/Logo';
 import MenuItem from '@/components/MenuItem/MenuItem';
 import ProjectInfoLabel from '../ProjectInfoLabel/ProjectInfoLabel';
 import { PROJECT_PAGES, type ProjectMeta } from '@/data/projects';
+import TextLink, { TextLinkProps } from '../TextLink/TextLink';
 
 type NavItem = {
   label: string;
@@ -30,6 +31,7 @@ const NAV_ITEMS: NavItem[] = [
 type SidebarConfig = {
   pageLabel: string;
   pageDescription?: string;
+  pageDescriptionLink?: Pick<TextLinkProps, 'href' | 'text'>;
   projectDetails?: ProjectMeta;
 };
 
@@ -62,7 +64,7 @@ function getSidebarConfig(pathname: string): SidebarConfig {
   if (pathname === '/studio') {
     return { pageLabel: 'STUDIO' };
   }
-  return { pageLabel: 'MENU' };
+  return { pageLabel: 'MENU', pageDescription: 'homa designs are deeply connected to the earth, embodying the harmony and grounding it provides', pageDescriptionLink: { href: '/studio', text: 'discover more' } };
 }
 
 export default function Sidebar() {
@@ -77,7 +79,7 @@ export default function Sidebar() {
     }
   }, [pathname]);
 
-  const { pageLabel, pageDescription, projectDetails } = getSidebarConfig(pathname);
+  const { pageLabel, pageDescription, projectDetails, pageDescriptionLink } = getSidebarConfig(pathname);
 
   return (
     <aside className={`sidebar ${isOpen ? 'open' : 'closed'}`}>
@@ -100,6 +102,7 @@ export default function Sidebar() {
           <p className="description_text">
             {pageDescription}
           </p>
+          { pageDescriptionLink && <TextLink {...pageDescriptionLink} arrow="up" size="lg"/>}
         </div>
       }
       {projectDetails &&

@@ -44,8 +44,12 @@
   align-items: flex-start;
   justify-content: space-between;
   width: 100%;
-  gap: 8px;
+  gap: 2.5rem;
   z-index: 1;
+
+  @media screen and (max-width: 480px) {
+    flex-direction: column-reverse;
+  }
 }
 
 .slogan {

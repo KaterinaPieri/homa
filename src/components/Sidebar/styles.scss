@@ -11,6 +11,7 @@ $ease: cubic-bezier(0.4, 0, 0.2, 1);
   height: 100vh;
   flex-shrink: 0;
   overflow: hidden;
+  z-index: 1;
   transition:
     width 0.5s $ease,
     padding 0.5s $ease,
@@ -44,6 +45,7 @@ $ease: cubic-bezier(0.4, 0, 0.2, 1);
       var(--padding-sidebar-expanded-bottom)
       var(--padding-sidebar-expanded-left);
     gap: 80px;
+    max-width: 90%;
 
     .logo_section {
       width: 100%;

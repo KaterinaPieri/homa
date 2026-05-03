@@ -1,14 +1,14 @@
 <svg width="var(--arrow-width)" height="var(--arrow-width)" viewBox="0 0 var(--arrow-width) var(--arrow-width)" fill="none" xmlns="http://www.w3.org/2000/svg">
 <g clip-path="url(#clip0_2044_163)">
 <path d="M0.789429 14.2105L13.5394 1.46054" stroke="var(--arrow-color)" stroke-width="2"/>
-<mask id="path-2-inside-1_2044_163" fill="white">
+<mask id="path-2-inside-1_2044_163" fill="var(--arrow-color)">
 <path d="M14.6875 15.3126L14.6875 0.312561H-0.3125"/>
 </mask>
 <path d="M14.6875 0.312561H16.6875V-1.68744H14.6875V0.312561ZM14.6875 15.3126H16.6875V0.312561H14.6875H12.6875L12.6875 15.3126H14.6875ZM14.6875 0.312561V-1.68744H-0.3125L-0.3125 0.312561L-0.3125 2.31256H14.6875L14.6875 0.312561Z" fill="var(--arrow-color)" mask="url(#path-2-inside-1_2044_163)"/>
 </g>
 <defs>
 <clipPath id="clip0_2044_163">
-<rect width="var(--arrow-width)" height="var(--arrow-width)" fill="white" transform="matrix(0 -1 1 0 0 var(--arrow-width))"/>
+<rect width="var(--arrow-width)" height="var(--arrow-width)" fill="var(--arrow-color)" transform="matrix(0 -1 1 0 0 var(--arrow-width))"/>
 </clipPath>
 </defs>
 </svg>

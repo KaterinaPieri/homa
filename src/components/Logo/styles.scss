@@ -1,7 +1,7 @@
 .logo {
   position: relative;
-  width: 100px;
-  height: 24px;
+  width: var(--width-logo);
+  height: auto;
   overflow: hidden;
   flex-shrink: 0;
 }

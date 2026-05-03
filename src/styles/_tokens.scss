@@ -99,6 +99,51 @@
   --padding-project-bottom: 40px;
   --padding-project-left: 40px;
   --padding-project-right: 40px;
+  --grid-projects: repeat(2, 1fr);
+  --width-carousel-step-idle: 64px;
+  --width-carousel-step-active: 220px;
+}
+
+@media screen and (max-width: 1024px) {
+  /* Size tokens - Mobile */
+  :root {
+  --padding-dialog: 48px;
+  --padding-hero-top: 80px;
+  --padding-hero-bottom: 80px;
+  --padding-hero-left: 40px;
+  --padding-hero-right: 40px;
+  --padding-sidebar-collapsed-top: 40px;
+  --padding-sidebar-collapsed-left: 24px;
+  --padding-sidebar-collapsed-right: 24px;
+  --padding-sidebar-collapsed-bottom: 72px;
+  --padding-body-top: 64px;
+  --padding-body-bottom: 64px;
+  --padding-body-left: 40px;
+  --padding-body-right: 40px;
+  --padding-body-right-sm: 40px;
+  --padding-sidebar-expanded-top: 40px;
+  --padding-sidebar-expanded-left: 40px;
+  --padding-sidebar-expanded-right: 40px;
+  --padding-sidebar-expanded-bottom: 72px;
+  --width-logo: 80px;
+  --width-mark: 20px;
+  --width-hamburger: 32px;
+  --width-menu_close: 40px;
+  --gap-body: 64px;
+  --gap-projects-horizontal: 40px;
+  --gap-project: 120px;
+  --gap-project_item: 16px;
+  --gap-projects-vertical: 64px;
+  --gap-project_sections-large: 120px;
+  --gap-project_sections-small: 40px;
+  --padding-project-top: 64px;
+  --padding-project-bottom: 40px;
+  --padding-project-left: 40px;
+  --padding-project-right: 40px;
+  --grid-projects: repeat(2, 1fr);
+  --width-carousel-step-idle: 64px;
+  --width-carousel-step-active: 220px;
+  }
 }
 
 @media screen and (max-width: 480px) {
@@ -146,5 +191,8 @@
     --padding-project-bottom: 20px;
     --padding-project-left: 20px;
     --padding-project-right: 20px;
+    --grid-projects: repeat(1, 1fr);
+    --width-carousel-step-idle: 24px;
+    --width-carousel-step-active: 120px;
   }
 }
