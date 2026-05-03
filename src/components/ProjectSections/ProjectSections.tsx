@@ -126,6 +126,35 @@ function SplitItem({ content }: { content: SplitContent }) {
       );
     }
 
+    case 'imagePairWithText':
+      const images = <div className="ps_stack_pair">{content.images.map((img, i) => (
+              <GalleryImg key={i} image={img} />
+            ))}</div>;
+      const imagesFirst = (content.imagePosition ?? 'top') === 'top';
+      const text = (
+        <div className="ps_split_text">
+          {content.paragraphs.map((p, i) => (
+            <p key={i}>{p}</p>
+          ))}
+        </div>
+      );
+      return (
+        <div className="ps_split_stack">
+          {imagesFirst ? <>{images}{text}</> : <>{text}{images}</>}
+        </div>
+      );
+
+    case 'imagePair':
+      return (
+        <div className="ps_split_stack">
+          <div className="ps_stack_pair">
+            {content.images.map((img, i) => (
+              <GalleryImg key={i} image={img} />
+            ))}
+          </div>
+        </div>
+      );
+
     case 'imageStack':
       return (
         <div className="ps_split_stack">
@@ -180,6 +209,9 @@ function flattenGalleryImages(sections: ProjectSection[]): ProjectImage[] {
               break;
             case 'imageStack':
               out.push(col.mainImage, ...col.subImages);
+              break;
+            case 'imagePair':
+              out.push(...col.images);
               break;
             case 'text':
               break;

@@ -7,6 +7,34 @@ import VillaKazaThumbnail from '@/assets/villa-kaza/villa-kaza-unfiltered.png';
 import HomaHouseThumbnail from '@/assets/homa-house/homa-unfiltered.png';
 import HomaHouseFeatured from '@/assets/homa-house/homa-featured-image.png';
 import HomaHouseTop from '@/assets/homa-house/homa-top-hero-image.png';
+import HomaHouseImage1 from '@/assets/homa-house/homa-image-1.png';
+import HomaHouseImage2 from '@/assets/homa-house/homa-image-2.png';
+import HomaHouseImage2Full from '@/assets/homa-house/homa-image-2-full.png';
+import HomaHouseImage3 from '@/assets/homa-house/homa-image-3.png';
+import HomaHouseImage4 from '@/assets/homa-house/homa-image-4.png';
+import HomaHouseImage4Full from '@/assets/homa-house/homa-image-4-full.png';
+import HomaHouseImage4a from '@/assets/homa-house/homa-image-4a.png';
+import HomaHouseImage5 from '@/assets/homa-house/homa-image-5.png';
+import HomaHouseImage5Full from '@/assets/homa-house/homa-image-5-full.png';
+import HomaHouseImage6 from '@/assets/homa-house/homa-image-6.png';
+import HomaHouseImage6Full from '@/assets/homa-house/homa-image-6-full.png';
+import HomaHouseImage7 from '@/assets/homa-house/homa-image-7.png';
+import HomaHouseImage7Full from '@/assets/homa-house/homa-image-7-full.png';
+import HomaHouseImage8 from '@/assets/homa-house/homa-image-8.png';
+import HomaHouseImage9 from '@/assets/homa-house/homa-image-9.png';
+import HomaHouseImage10 from '@/assets/homa-house/homa-image-10.png';
+import HomaHouseImage11 from '@/assets/homa-house/homa-image-11.png';
+import HomaHouseImage12 from '@/assets/homa-house/homa-image-12.png';
+import HomaHouseImage13 from '@/assets/homa-house/homa-image-13.png';
+import HomaHouseImage14 from '@/assets/homa-house/homa-image-14.png';
+import HomaHouseImage15 from '@/assets/homa-house/homa-image-15.png';
+import HomaHouseImage16 from '@/assets/homa-house/homa-image-16.png';
+import HomaHouseImage17 from '@/assets/homa-house/homa-image-17.png';
+import HomaHouseImage18 from '@/assets/homa-house/homa-image-18.png';
+import HomaHouseImage18Full from '@/assets/homa-house/homa-image-18-full.png';
+import HomaHouseImage19 from '@/assets/homa-house/homa-image-19.png';
+import HomaHouseImage19Full from '@/assets/homa-house/homa-image-19-full.png';
+
 import VillaKazaTop from '@/assets/villa-kaza/villa-kaza-top-image-section.png';
 import VillaKazaImage1 from '@/assets/villa-kaza/villa-kaza-image-1.png';
 import VillaKazaImage2 from '@/assets/villa-kaza/villa-kaza-image-2.png';
@@ -107,7 +135,9 @@ export type SplitContent =
   | { kind: 'image'; image: ProjectImage }
   | { kind: 'text'; heading?: string; paragraphs: string[] }
   | { kind: 'imageWithText'; image: ProjectImage; paragraphs: string[]; imagePosition?: 'top' | 'bottom' }
-  | { kind: 'imageStack'; mainImage: ProjectImage; subImages: ProjectImage[] };
+  | { kind: 'imageStack'; mainImage: ProjectImage; subImages: ProjectImage[] }
+  | { kind: 'imagePair';  images: [ProjectImage, ProjectImage] }
+  | { kind: 'imagePairWithText'; images: [ProjectImage, ProjectImage]; paragraphs: string[]; imagePosition?: 'top' | 'bottom' }
 
 export type ProjectSection =
   | { type: 'hero';          image: ProjectImage }
@@ -215,6 +245,100 @@ const homaHouse: ProjectPageData = {
   },
   sections: [
     { type: 'hero', image: getImage(HomaHouseTop.src, 'Homa House') },
+    { type: 'header', name: project.HomaHouse, location: 'larnaca, cyprus' },
+    { type: 'fullImage', image: getImage(HomaHouseFeatured.src, 'Villa Kaza facade and reflecting pool') },
+    {
+      type: 'split',
+      align: 'top',
+      left: { kind: 'image', image: getImage(HomaHouseImage1.src, 'Concrete and timber facade detail') },
+      right: {
+        kind: 'imageWithText',
+        image: getImage(HomaHouseImage2.src, 'Living room interior at dusk', HomaHouseImage2Full.src),
+        paragraphs: [
+          'It all begins with the earth. A project emerges, rooted deeply in the land it inhabits — not merely as a nod to ancestry or locality but as an invitation to reimagine what living can be. This is a home fully protected, quietly experimental, unfolding through a series of nuanced and intriguing moments.'
+        ],
+      },
+    },
+    { type: 'fullImage', image: getImage(HomaHouseImage3.src, 'Villa Kaza facade and reflecting pool') },
+    {
+      type: 'split',
+      align: 'top',
+      left: {
+        kind: 'imageWithText',
+        imagePosition: 'bottom',
+        image: getImage(HomaHouseImage4.src, 'Living and dining interior', HomaHouseImage4Full.src),
+        paragraphs: [
+          'Three monolithic volumes rise from the soil, their tones drawn directly from the earth from which they spring. Two carefully carved gestures in these masses offer a passage, an entrance both welcoming and mysterious, leading into the heart of the house — a courtyard that subtly recalls the traditional gathering spaces of family life.',
+          'Beyond this threshold, the robust walls sculpt a delicate interplay of light and shadow, weaving natural hues with fleeting glimpses of sky to guide the traveler inward.'
+        ],
+      },
+      right: {
+        kind: 'image',
+        image: getImage(HomaHouseImage4a.src, 'Sunken living room with double-height ceiling'),
+      },
+    },
+    {
+      type: 'split',
+      align: 'center',
+      left: {
+        kind: 'imageStack',
+        mainImage: getImage(HomaHouseImage5.src, 'Open dining and kitchen', HomaHouseImage5Full.src),
+        subImages: [
+          getImage(HomaHouseImage6.src, 'Dining detail', HomaHouseImage6Full.src),
+          getImage(HomaHouseImage7.src, 'Bar counter detail', HomaHouseImage7Full.src),
+        ],
+      },
+      right: {
+        kind: 'text',
+        paragraphs: [
+          'The seemingly severe exterior of these monoliths yields to interiors marked by warmth and distinct character, where landscape and architecture merge effortlessly. The spatial journey unfolds gradually, a gradient that moves from private sanctuaries to semi-private domains and ultimately to communal spaces.',
+          'A long corridor extends through the volumes, culminating in a veranda that binds the whole — creating spaces imbued with understated charm and richness.',
+        ],
+      },
+    },
+    { type: 'fullImage', image: getImage(HomaHouseImage8.src, 'Villa Kaza facade and reflecting pool') },
+    {
+      type: 'imagePair',
+      images: [
+        getImage(HomaHouseImage9.src, 'Master bedroom'),
+        getImage(HomaHouseImage10.src, 'Master bedroom with wardrobe area at twilight'),
+      ],
+    },
+    { type: 'centeredImage', image: getImage(HomaHouseImage11.src, 'Floor plan'), maxWidth: 1200 },
+    {
+      type: 'imagePair',
+      images: [
+        getImage(HomaHouseImage12.src, 'Master bedroom'),
+        getImage(HomaHouseImage13.src, 'Master bedroom with wardrobe area at twilight'),
+      ],
+    },
+    { type: 'centeredImage', image: getImage(HomaHouseImage14.src, 'Floor plan'), maxWidth: 1200 },
+    {
+      type: 'imagePair',
+      images: [
+        getImage(HomaHouseImage15.src, 'Master bedroom'),
+        getImage(HomaHouseImage16.src, 'Master bedroom with wardrobe area at twilight'),
+      ],
+    },
+    {
+      type: 'split',
+      align: 'top',
+      right: {
+        kind: 'imagePairWithText',
+        imagePosition: 'top',
+        images: [
+          getImage(HomaHouseImage18.src, 'Dining detail', HomaHouseImage18Full.src),
+          getImage(HomaHouseImage19.src, 'Bar counter detail', HomaHouseImage19Full.src),
+        ],
+        paragraphs: [
+          'It is a contemporary reinterpretation of tradition, a carefully considered architectural composition that offers a refined environment for its hosts — protective, inviting, and suffused with a quiet sense of purpose.'
+        ],
+      },
+      left: {
+        kind: 'image',
+        image: getImage(HomaHouseImage17.src, 'Sunken living room with double-height ceiling'),
+      },
+    },
   ],
 };
 
