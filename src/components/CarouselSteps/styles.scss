@@ -11,17 +11,25 @@
   width: var(--width-carousel-step-idle);
   flex-shrink: 0;
   overflow: hidden;
+  cursor: pointer;
   transition: width 0.4s ease;
 
   &.active {
     width: var(--width-carousel-step-active);
+    cursor: default;
+  }
+
+  &:not(.active):hover .track {
+    opacity: 0.6;
   }
 }
 
 .carousel_step .track {
   position: absolute;
   inset: 0;
-  background-color: rgba(255, 234, 219, 0.3);
+  background-color: rgb(255, 234, 219);
+  opacity: 0.3;
+  transition: opacity 0.2s ease;
 }
 
 .carousel_step .fill {

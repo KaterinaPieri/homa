@@ -40,16 +40,28 @@ export default function CarouselSteps({
     return () => window.clearTimeout(id);
   }, [active, cycle, duration, isControlled, safeCount]);
 
+  const handleStepClick = (index: number) => {
+    if (index === active) return;
+    if (!isControlled) {
+      setInternalIndex(index);
+      setCycle((c) => c + 1);
+    }
+    onStepChangeRef.current?.(index);
+  };
+
   return (
     <div className="carousel_steps" role="tablist" aria-label="Carousel progress">
       {Array.from({ length: safeCount }, (_, i) => {
         const isActive = i === active;
         return (
-          <div
+          <button
             key={i}
+            type="button"
             className={`carousel_step${isActive ? ' active' : ''}`}
             role="tab"
             aria-selected={isActive}
+            aria-label={`Go to slide ${i + 1}`}
+            onClick={() => handleStepClick(i)}
           >
             <div className="track" />
             {isActive && (
@@ -59,7 +71,7 @@ export default function CarouselSteps({
                 style={{ animationDuration: `${duration}ms` }}
               />
             )}
-          </div>
+          </button>
         );
       })}
     </div>

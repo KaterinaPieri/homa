@@ -27,6 +27,7 @@ export default function HeroSection({
             src={project.image.src}
             alt={project.name}
             className={index === activeIndex ? 'active' : ''}
+            style={project.mobileImagePosition ? { '--mobile-image-position': project.mobileImagePosition } as React.CSSProperties : undefined}
           />
         ))}
         <div className="overlay" />

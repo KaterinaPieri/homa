@@ -5,6 +5,7 @@ import VillaBajThumbnail from '@/assets/villa-baj/villa-baj-unfiltered.png';
 import VillaBajTop from '@/assets/villa-baj/villa-baj-top-hero.png';
 import VillaKazaThumbnail from '@/assets/villa-kaza/villa-kaza-unfiltered.png';
 import HomaHouseThumbnail from '@/assets/homa-house/homa-unfiltered.png';
+import HomaHouseFeatured from '@/assets/homa-house/homa-featured-image.png';
 import HomaHouseTop from '@/assets/homa-house/homa-top-hero-image.png';
 import VillaKazaTop from '@/assets/villa-kaza/villa-kaza-top-image-section.png';
 import VillaKazaImage1 from '@/assets/villa-kaza/villa-kaza-image-1.png';
@@ -67,10 +68,11 @@ export type FeaturedProject = {
   name: project;
   image: StaticImageData;
   href: string;
+  mobileImagePosition?: string;
 };
 
 export const FEATURED_PROJECTS: FeaturedProject[] = [
-  { name: project.HomaHouse, image: HomaHouseThumbnail, href: getProjectUrl(project.HomaHouse) },
+  { name: project.HomaHouse, image: HomaHouseFeatured, href: getProjectUrl(project.HomaHouse), mobileImagePosition: '26%' },
   { name: project.VillaKaza, image: VillaKazaThumbnail, href: getProjectUrl(project.VillaKaza) },
   { name: project.Apb,       image: ApbThumbnail,       href: getProjectUrl(project.Apb) },
   { name: project.VillaBaj,  image: VillaBajThumbnail,  href: getProjectUrl(project.VillaBaj) },
