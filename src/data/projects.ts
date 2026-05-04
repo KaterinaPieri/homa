@@ -201,7 +201,19 @@ const villaKaza: ProjectPageData = {
       },
     },
     { type: 'fullImage', image: getImage(VillaKazaLights.src, 'Interior corridor at night with lights turning on') },
-    { type: 'centeredImage', image: getImage(VillaKazaImage7.src, 'Cross-section drawing', VillaKazaImage7Full.src), maxWidth: 800 },
+    // { type: 'centeredImage', image: getImage(VillaKazaImage7.src, 'Cross-section drawing', VillaKazaImage7Full.src), maxWidth: 800 },
+    { 
+      type: 'split',
+      align: 'top',
+      left: {
+        kind: 'image',
+        image: getImage(VillaKazaImage7.src, 'Cross-section drawing', VillaKazaImage7Full.src)
+      },
+      right: {
+        kind: 'text',
+        paragraphs: []
+      }
+    },
     {
       type: 'split',
       align: 'top',
@@ -221,7 +233,19 @@ const villaKaza: ProjectPageData = {
         ],
       },
     },
-    { type: 'centeredImage', image: getImage(VillaKazaImage11.src, 'Floor plan', VillaKazaImage11Full.src), maxWidth: 800 },
+    // { type: 'centeredImage', image: getImage(VillaKazaImage11.src, 'Floor plan', VillaKazaImage11Full.src), maxWidth: 800 },
+    { 
+      type: 'split',
+      align: 'top',
+      left: {
+        kind: 'image',
+        image: getImage(VillaKazaImage11.src, 'Floor plan', VillaKazaImage11Full.src)
+      },
+      right: {
+        kind: 'text',
+        paragraphs: []
+      }
+    },
     {
       type: 'imagePair',
       images: [
@@ -244,29 +268,29 @@ const homaHouse: ProjectPageData = {
     year: '2024',
   },
   sections: [
-    { type: 'hero', image: getImage(HomaHouseTop.src, 'Homa House') },
+    { type: 'hero', image: getImage(HomaHouseTop.src, 'Homa House terracotta facade running along the road under a desert sky') },
     { type: 'header', name: project.HomaHouse, location: 'larnaca, cyprus' },
-    { type: 'fullImage', image: getImage(HomaHouseFeatured.src, 'Villa Kaza facade and reflecting pool') },
+    { type: 'fullImage', image: getImage(HomaHouseFeatured.src, 'Stepped terracotta volumes of the Homa House front elevation with native shrubs') },
     {
       type: 'split',
       align: 'top',
-      left: { kind: 'image', image: getImage(HomaHouseImage1.src, 'Concrete and timber facade detail') },
+      left: { kind: 'image', image: getImage(HomaHouseImage1.src, 'Earth-toned courtyard corner with terracotta-tile floor and a single potted plant') },
       right: {
         kind: 'imageWithText',
-        image: getImage(HomaHouseImage2.src, 'Living room interior at dusk', HomaHouseImage2Full.src),
+        image: getImage(HomaHouseImage2.src, 'Inner courtyard with a reflecting pool flanked by terracotta walls and ornamental grasses', HomaHouseImage2Full.src),
         paragraphs: [
           'It all begins with the earth. A project emerges, rooted deeply in the land it inhabits — not merely as a nod to ancestry or locality but as an invitation to reimagine what living can be. This is a home fully protected, quietly experimental, unfolding through a series of nuanced and intriguing moments.'
         ],
       },
     },
-    { type: 'fullImage', image: getImage(HomaHouseImage3.src, 'Villa Kaza facade and reflecting pool') },
+    { type: 'fullImage', image: getImage(HomaHouseImage3.src, 'Axonometric site diagram showing Homa House footprint within its oval site boundary') },
     {
       type: 'split',
       align: 'top',
       left: {
         kind: 'imageWithText',
         imagePosition: 'bottom',
-        image: getImage(HomaHouseImage4.src, 'Living and dining interior', HomaHouseImage4Full.src),
+        image: getImage(HomaHouseImage4.src, 'Outdoor terrace with terracotta-tile floor, planted edges and a tall earthen boundary wall', HomaHouseImage4Full.src),
         paragraphs: [
           'Three monolithic volumes rise from the soil, their tones drawn directly from the earth from which they spring. Two carefully carved gestures in these masses offer a passage, an entrance both welcoming and mysterious, leading into the heart of the house — a courtyard that subtly recalls the traditional gathering spaces of family life.',
           'Beyond this threshold, the robust walls sculpt a delicate interplay of light and shadow, weaving natural hues with fleeting glimpses of sky to guide the traveler inward.'
@@ -274,7 +298,7 @@ const homaHouse: ProjectPageData = {
       },
       right: {
         kind: 'image',
-        image: getImage(HomaHouseImage4a.src, 'Sunken living room with double-height ceiling'),
+        image: getImage(HomaHouseImage4a.src, 'Threshold view through a tall doorway into the warm terracotta corridor beyond'),
       },
     },
     {
@@ -282,10 +306,10 @@ const homaHouse: ProjectPageData = {
       align: 'center',
       left: {
         kind: 'imageStack',
-        mainImage: getImage(HomaHouseImage5.src, 'Open dining and kitchen', HomaHouseImage5Full.src),
+        mainImage: getImage(HomaHouseImage5.src, 'Close-up of a beam meeting the terracotta wall with light grazing the textured surface', HomaHouseImage5Full.src),
         subImages: [
-          getImage(HomaHouseImage6.src, 'Dining detail', HomaHouseImage6Full.src),
-          getImage(HomaHouseImage7.src, 'Bar counter detail', HomaHouseImage7Full.src),
+          getImage(HomaHouseImage6.src, 'Open-air light well between terracotta volumes with a flowering shrub and gravel bed', HomaHouseImage6Full.src),
+          getImage(HomaHouseImage7.src, 'Living interior with bronze cabinetry, a built-in stone bench and a blue sofa', HomaHouseImage7Full.src),
         ],
       },
       right: {
@@ -296,28 +320,28 @@ const homaHouse: ProjectPageData = {
         ],
       },
     },
-    { type: 'fullImage', image: getImage(HomaHouseImage8.src, 'Villa Kaza facade and reflecting pool') },
+    { type: 'fullImage', image: getImage(HomaHouseImage8.src, 'View from the tiled veranda into the living room through a wide framed opening') },
     {
       type: 'imagePair',
       images: [
-        getImage(HomaHouseImage9.src, 'Master bedroom'),
-        getImage(HomaHouseImage10.src, 'Master bedroom with wardrobe area at twilight'),
+        getImage(HomaHouseImage9.src, 'Bedroom looking past a chair toward a doorway opening onto a sunlit terracotta wall'),
+        getImage(HomaHouseImage10.src, 'Glimpse from the bed through a doorway into an adjoining room with built-in shelving'),
       ],
     },
-    { type: 'centeredImage', image: getImage(HomaHouseImage11.src, 'Floor plan'), maxWidth: 1200 },
+    { type: 'centeredImage', image: getImage(HomaHouseImage11.src, 'Cross-section drawing of Homa House showing the pool and adjoining volumes'), maxWidth: 1200 },
     {
       type: 'imagePair',
       images: [
-        getImage(HomaHouseImage12.src, 'Master bedroom'),
-        getImage(HomaHouseImage13.src, 'Master bedroom with wardrobe area at twilight'),
+        getImage(HomaHouseImage12.src, 'Tall narrow window framing the horizon above a wooden window seat'),
+        getImage(HomaHouseImage13.src, 'Looking up the terracotta walls of an open-sky courtyard with a single wall sconce'),
       ],
     },
-    { type: 'centeredImage', image: getImage(HomaHouseImage14.src, 'Floor plan'), maxWidth: 1200 },
+    { type: 'centeredImage', image: getImage(HomaHouseImage14.src, 'Roof and site plan of Homa House drawn in white on black'), maxWidth: 1200 },
     {
       type: 'imagePair',
       images: [
-        getImage(HomaHouseImage15.src, 'Master bedroom'),
-        getImage(HomaHouseImage16.src, 'Master bedroom with wardrobe area at twilight'),
+        getImage(HomaHouseImage15.src, 'Dark wood kitchen cabinetry with a built-in oven beside a curtained window'),
+        getImage(HomaHouseImage16.src, 'Galley kitchen with dark cabinetry and a sink, sunlight falling across the floor'),
       ],
     },
     {
@@ -327,8 +351,8 @@ const homaHouse: ProjectPageData = {
         kind: 'imagePairWithText',
         imagePosition: 'top',
         images: [
-          getImage(HomaHouseImage18.src, 'Dining detail', HomaHouseImage18Full.src),
-          getImage(HomaHouseImage19.src, 'Bar counter detail', HomaHouseImage19Full.src),
+          getImage(HomaHouseImage18.src, "Kitchen interior with a sink counter at left and a dark door at the corridor's end", HomaHouseImage18Full.src),
+          getImage(HomaHouseImage19.src, 'Bathroom with a long trough sink and a tall window above a built-in window seat', HomaHouseImage19Full.src),
         ],
         paragraphs: [
           'It is a contemporary reinterpretation of tradition, a carefully considered architectural composition that offers a refined environment for its hosts — protective, inviting, and suffused with a quiet sense of purpose.'
@@ -336,7 +360,7 @@ const homaHouse: ProjectPageData = {
       },
       left: {
         kind: 'image',
-        image: getImage(HomaHouseImage17.src, 'Sunken living room with double-height ceiling'),
+        image: getImage(HomaHouseImage17.src, 'View from the bedroom through a doorway to a single tree in the terracotta courtyard'),
       },
     },
   ],
