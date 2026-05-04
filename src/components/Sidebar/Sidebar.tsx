@@ -16,7 +16,12 @@ type NavItem = {
 };
 
 const NAV_ITEMS: NavItem[] = [
-  { label: 'projects', href: '/#projects' },
+  { label: 'projects', href: '/#projects',
+    onClick: (e) => {
+      e.preventDefault();
+      scrollToElement('projects', { behavior: 'smooth' });
+    },
+   },
   { label: 'studio',   href: '/studio' },
   {
     label: 'contact',

@@ -13,6 +13,7 @@
 @use '../components/Footer/styles' as footer;
 @use '../components/StudioSection/styles' as studio-section;
 @use '../components/ProjectSections/styles' as project-sections;
+@use '../components/ProjectNavigation/styles' as project-navigation;
 @use '../components/ZoomImage/styles' as zoom-image;
 @use '../components/Cursor/styles' as cursor;
 @use '../components/LoadingScreen/styles' as loading-screen;
@@ -29,16 +30,6 @@
 html,
 body {
   height: 100%;
-}
-
-html {
-  scroll-behavior: smooth;
-}
-
-@media (prefers-reduced-motion: reduce) {
-  html {
-    scroll-behavior: auto;
-  }
 }
 
 body {

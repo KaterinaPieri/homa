@@ -49,7 +49,7 @@ export function ProjectHero({ image }: { image: ProjectImage }) {
 
 export function ProjectHeader({ name, location }: { name: string; location: string }) {
   return (
-    <section className="ps_header">
+    <section className="project_section ps_header">
       <span className="ps_header_label">{name}</span>
       <p className="ps_header_value">{location}</p>
     </section>
@@ -58,7 +58,7 @@ export function ProjectHeader({ name, location }: { name: string; location: stri
 
 export function ProjectFullImage({ image }: { image: ProjectImage }) {
   return (
-    <section className="ps_full_image">
+    <section className="project_section ps_full_image">
       <GalleryImg image={image} />
       {image.caption && <p className="ps_caption">{image.caption}</p>}
     </section>
@@ -73,7 +73,7 @@ export function ProjectCenteredImage({
   maxWidth?: number;
 }) {
   return (
-    <section className="ps_centered_image">
+    <section className="project_section ps_centered_image">
       <img
         src={image.src}
         alt={image.alt}
@@ -86,7 +86,7 @@ export function ProjectCenteredImage({
 
 export function ProjectImagePair({ images }: { images: [ProjectImage, ProjectImage] }) {
   return (
-    <section className="ps_image_pair">
+    <section className="project_section ps_image_pair">
       {images.map((img, i) => (
         <GalleryImg key={i} image={img} />
       ))}
@@ -179,7 +179,7 @@ export function ProjectSplit({
   align?: 'top' | 'bottom' | 'center';
 }) {
   return (
-    <section className="ps_split" data-align={align}>
+    <section className="project_section ps_split" data-align={align}>
       <div className="ps_split_col"><SplitItem content={left} /></div>
       <div className="ps_split_col"><SplitItem content={right} /></div>
     </section>

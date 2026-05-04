@@ -108,6 +108,10 @@
   &[data-align='bottom'] { align-items: end; }
 }
 
+.project_section {
+  padding-right: var(--padding-body-right);
+}
+
 .ps_split_col {
   display: flex;
   flex-direction: column;

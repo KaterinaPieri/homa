@@ -1,6 +1,7 @@
 import type { Metadata } from 'next';
 import { notFound } from 'next/navigation';
 import Footer from '@/components/Footer/Footer';
+import ProjectNavigation from '@/components/ProjectNavigation/ProjectNavigation';
 import ProjectSections from '@/components/ProjectSections/ProjectSections';
 import { PROJECT_PAGES } from '@/data/projects';
 
@@ -28,6 +29,7 @@ export default async function ProjectPage({ params }: { params: Promise<Params> 
   return (
     <>
       <ProjectSections sections={project.sections} />
+      <ProjectNavigation currentSlug={slug} />
       <Footer fullWidth />
     </>
   );
