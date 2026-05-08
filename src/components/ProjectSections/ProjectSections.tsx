@@ -21,7 +21,7 @@ import Lightbox from './Lightbox';
 type GalleryOpenFn = (image: ProjectImage) => void;
 const GalleryContext = createContext<GalleryOpenFn | null>(null);
 
-function GalleryImg({ image, className }: { image: ProjectImage; className?: string }) {
+function GalleryImg({ image, className, maxWidth }: { image: ProjectImage; className?: string, maxWidth?: string }) {
   const open = useContext(GalleryContext);
   return (
     <ZoomImage>
@@ -31,7 +31,7 @@ function GalleryImg({ image, className }: { image: ProjectImage; className?: str
         className={className}
         onClick={open ? () => open(image) : undefined}
         data-cursor-hover={open ? '' : undefined}
-        style={open ? { cursor: 'pointer' } : undefined}
+        style={{ cursor: open ? 'pointer' : 'unset', maxWidth: maxWidth || 'unset' }}
       />
     </ZoomImage>
   );
@@ -74,10 +74,9 @@ export function ProjectCenteredImage({
 }) {
   return (
     <section className="project_section ps_centered_image">
-      <img
-        src={image.src}
-        alt={image.alt}
-        style={maxWidth ? { maxWidth: `${maxWidth}px` } : undefined}
+      <GalleryImg
+        image={image}
+        maxWidth={maxWidth ? `${maxWidth}px` : undefined}
       />
       {image.caption && <p className="ps_caption">{image.caption}</p>}
     </section>
@@ -147,7 +146,7 @@ function SplitItem({ content }: { content: SplitContent }) {
     case 'imagePair':
       return (
         <div className="ps_split_stack">
-          <div className="ps_stack_pair">
+          <div className={`ps_stack_pair${content.flexDirection === 'column' ? ' flex_column': ''}`}>
             {content.images.map((img, i) => (
               <GalleryImg key={i} image={img} />
             ))}

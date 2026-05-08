@@ -1,6 +1,22 @@
 import type { StaticImageData } from 'next/image';
 import ApbThumbnail from '@/assets/apb/apb-unfiltered.png';
 import ApbTop from '@/assets/apb/apb-top-hero.png';
+import ApbImage1 from '@/assets/apb/apb-1.jpg';
+import ApbImage1Full from '@/assets/apb/apb-1-full.jpg';
+import ApbImage2 from '@/assets/apb/apb-2.jpg';
+import ApbImage2Full from '@/assets/apb/apb-2-full.jpg';
+import ApbImage3 from '@/assets/apb/apb-3.jpg';
+import ApbImage3Full from '@/assets/apb/apb-3-full.jpg';
+import ApbImage4 from '@/assets/apb/apb-4.jpg';
+import ApbImage4Full from '@/assets/apb/apb-4-full.jpg';
+import ApbImage5 from '@/assets/apb/apb-5.jpg';
+import ApbImage5Full from '@/assets/apb/apb-5-full.jpg';
+import ApbImage6 from '@/assets/apb/apb-6.jpg';
+import ApbImage6Full from '@/assets/apb/apb-6-full.jpg';
+import ApbImage7 from '@/assets/apb/apb-7.jpg';
+import ApbImage7Full from '@/assets/apb/apb-7-full.jpg';
+import ApbImage8 from '@/assets/apb/apb-8.png';
+import ApbImage9 from '@/assets/apb/apb-9.jpg';
 import VillaBajThumbnail from '@/assets/villa-baj/villa-baj-unfiltered.png';
 import VillaBajTop from '@/assets/villa-baj/villa-baj-top-hero.png';
 import VillaKazaThumbnail from '@/assets/villa-kaza/villa-kaza-unfiltered.png';
@@ -136,7 +152,7 @@ export type SplitContent =
   | { kind: 'text'; heading?: string; paragraphs: string[] }
   | { kind: 'imageWithText'; image: ProjectImage; paragraphs: string[]; imagePosition?: 'top' | 'bottom' }
   | { kind: 'imageStack'; mainImage: ProjectImage; subImages: ProjectImage[] }
-  | { kind: 'imagePair';  images: [ProjectImage, ProjectImage] }
+  | { kind: 'imagePair';  images: [ProjectImage, ProjectImage], flexDirection?: 'row' | 'column' }
   | { kind: 'imagePairWithText'; images: [ProjectImage, ProjectImage]; paragraphs: string[]; imagePosition?: 'top' | 'bottom' }
 
 export type ProjectSection =
@@ -378,7 +394,67 @@ const apb: ProjectPageData = {
     year: '2023',
   },
   sections: [
-    { type: 'hero', image: getImage(ApbTop.src, 'APB') },
+    { type: 'hero', image: getImage(ApbTop.src, 'APB salon with terracotta archways, mirrored counter and styling chairs') },
+    { type: 'header', name: project.Apb, location: 'nicosia, cyprus' },
+    {
+      type: 'split',
+      align: 'top',
+      left: {
+        kind: 'image',
+        image: getImage(ApbImage1.src, 'Stone bench beneath a timber-clad staircase with cushions and a soft wall light', ApbImage1Full.src),
+      },
+      right: {
+        kind: 'imageWithText',
+        image: getImage(ApbImage2.src, 'Stepped stone display with sheer curtains and a timber stair beyond', ApbImage2Full.src),
+        paragraphs: [
+          'At the point where movement gathers and pauses, a new space takes shape. A project unfolds within the central passage of the town, shaped by the constant presence of people and the quiet energy of urban life. Rather than simply occupying a storefront, the salon positions itself as an experience — a place where exposure and intimacy coexist in careful balance.',
+          'The location carries a distinctive character. Set along the main pedestrian route, the salon becomes part of a living sequence of encounters, glances. The steady flow of passersby defines the atmosphere of the space, turning the façade into an active threshold between interior life and the surrounding city.',
+        ],
+      },
+    },
+    {
+      type: 'imagePair',
+      images: [
+        getImage(ApbImage3.src, 'Long mirrored counter with arched mirrors and three styling chairs', ApbImage3Full.src),
+        getImage(ApbImage4.src, 'Row of styling chairs against curtained backdrops with downlights above', ApbImage4Full.src),
+      ],
+    },
+    {
+      type: 'split',
+      align: 'bottom',
+      left: {
+        kind: 'imageWithText',
+        imagePosition: 'bottom',
+        image: getImage(ApbImage5.src, 'Lounge area with styling chairs in the foreground and a washing station beyond', ApbImage5Full.src),
+        paragraphs: [
+          'Within this openness, the design introduces a sense of ease and protection. The spatial journey is composed as a gradual shift from the public realm into a more personal environment, allowing visitors to step into a moment, an experience. The salon becomes a setting for care and attention — a pause that feels intentional, calm, and welcoming.',
+        ],
+      },
+      right: {
+        kind: 'imagePair',
+        flexDirection: 'column',
+        images: [
+          getImage(ApbImage6.src, 'Two washing stations flanking a timber plinth with a potted plant and shelf above', ApbImage6Full.src),
+          getImage(ApbImage7.src, 'Three reclining washing chairs against built-in cabinetry with an olive tree at the side', ApbImage7Full.src)
+        ]
+      },
+    },
+    { type: 'centeredImage', image: getImage(ApbImage8.src, 'Floor plan of the APB salon along a long narrow footprint'), maxWidth: 1200 },
+    {
+      type: 'split',
+      align: 'top',
+      left: {
+        kind: 'image',
+        image: getImage(ApbImage9.src, 'Retail zone at the entrance with stepped stone displays and product bottles on a shelf', ApbImage2Full.src),
+      },
+      right: {
+        kind: 'text',
+        paragraphs: [
+          'The interior is organized as a series of subtle layers, where visibility is balanced with comfort and privacy emerges naturally through spatial arrangement. Light, materials, and carefully framed views shape an atmosphere of hospitality, transforming the routine visit into a refined and memorable experience. The surrounding urban movement remains present, sensed rather than imposed, gently accompanying the activities within.',
+          'At the entrance, a dedicated retail zone functions as a shared interface between the business and the community — a platform that supports brands while offering visitors an inviting point of interaction. More than a display, it becomes a small gathering space, strengthening the relationship of the salon.',
+        ],
+      },
+    },
   ],
 };
 

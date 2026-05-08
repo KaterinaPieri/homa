@@ -168,6 +168,10 @@
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: var(--gap-projects-horizontal);
+
+  &.flex_column {
+    grid-template-columns: 1fr;
+  }
 }
 
 @media screen and (max-width: 768px) {
