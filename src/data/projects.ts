@@ -19,6 +19,20 @@ import ApbImage8 from '@/assets/apb/apb-8.png';
 import ApbImage9 from '@/assets/apb/apb-9.jpg';
 import VillaBajThumbnail from '@/assets/villa-baj/villa-baj-unfiltered.png';
 import VillaBajTop from '@/assets/villa-baj/villa-baj-top-hero.png';
+import VillaBajImage1 from '@/assets/villa-baj/villa-baj-image-1.jpg';
+import VillaBajImage2 from '@/assets/villa-baj/villa-baj-image-2.jpg';
+import VillaBajImage3 from '@/assets/villa-baj/villa-baj-image-3.jpg';
+import VillaBajImage4 from '@/assets/villa-baj/villa-baj-image-4.jpg';
+import VillaBajImage5 from '@/assets/villa-baj/villa-baj-image-5.jpg';
+import VillaBajImage6 from '@/assets/villa-baj/villa-baj-image-6.jpg';
+import VillaBajImage7 from '@/assets/villa-baj/villa-baj-image-7.jpg';
+import VillaBajImage8 from '@/assets/villa-baj/villa-baj-image-8.png';
+import VillaBajImage9 from '@/assets/villa-baj/villa-baj-image-9.jpg';
+import VillaBajImage10 from '@/assets/villa-baj/villa-baj-image-10.jpg';
+import VillaBajImage11 from '@/assets/villa-baj/villa-baj-image-11.jpg';
+import VillaBajImage12 from '@/assets/villa-baj/villa-baj-image-12.png';
+import VillaBajImage13 from '@/assets/villa-baj/villa-baj-image-13.jpg';
+import VillaBajImage14 from '@/assets/villa-baj/villa-baj-image-14.jpg';
 import VillaKazaThumbnail from '@/assets/villa-kaza/villa-kaza-unfiltered.png';
 import HomaHouseThumbnail from '@/assets/homa-house/homa-unfiltered.png';
 import HomaHouseFeatured from '@/assets/homa-house/homa-featured-image.png';
@@ -470,7 +484,102 @@ const villaBaj: ProjectPageData = {
     year: '2024',
   },
   sections: [
-    { type: 'hero', image: getImage(VillaBajTop.src, 'Villa Baj') },
+    { type: 'hero', image: getImage(VillaBajTop.src, 'Villa Baj exterior with pool and palm trees at dusk') },
+    { type: 'header', name: project.VillaBaj, location: 'larnaca, cyprus' },
+    { type: 'fullImage', image: getImage(VillaBajImage1.src, 'Pool courtyard with a tall palm tree, sun loungers and a sculpted boundary wall') },
+    {
+      type: 'split',
+      align: 'top',
+      left: {
+        kind: 'image',
+        image: getImage(VillaBajImage2.src, 'Entrance corridor with a perforated screen wall and a flowering tree above'),
+      },
+      right: {
+        kind: 'imageWithText',
+        imagePosition: 'top',
+        image: getImage(VillaBajImage3.src, 'Veranda with floor cushions opening onto an interior sculptural spiral staircase'),
+        paragraphs: [
+          'A new chapter takes shape in stone and light — a villa conceived as a sanctuary for two people choosing to anchor their lives in a new country. It is not merely a holiday residence, but a place of permanence and retreat, where rituals can evolve into lasting memories.',
+          'The architecture presents itself with confidence — solid, composed, and reassuring. Robust walls rise with sculptural clarity, their monolithic presence grounding the dwelling firmly in its setting while offering a sense of protection and permanence. Carefully positioned openings invite natural light deep into the interior, softening the mass and revealing moments of transparency that connect the inhabitants to the surrounding landscape.',
+        ],
+      },
+    },
+    { type: 'fullImage', image: getImage(VillaBajImage4.src, 'Living room with leather sofas, a dark fireplace volume and a red artwork on a textured wall') },
+    {
+      type: 'split',
+      align: 'top',
+      left: {
+        kind: 'imageWithText',
+        imagePosition: 'bottom',
+        image: getImage(VillaBajImage5.src, 'Open veranda framing the sculptural spiral staircase with dining and lounge beyond'),
+        paragraphs: [
+          'Layers of filtration shape the experience of privacy. Screens, recesses, and textured surfaces create gentle elements between exposure and seclusion, allowing the house to feel both sheltered and open. The movement through the villa becomes a gradual unfolding — a sequence of spaces that balance intimacy with openness, solitude with togetherness.',
+          "The villa's sculptural design is conceived almost as a gallery — a composition of forms and materials that can be experienced, admired, and lived within. It is a place where architecture becomes an expression, where inhabitants and guests alike can feel a quiet sense of pride in calling it home.",
+        ],
+      },
+      right: {
+        kind: 'imagePair',
+        flexDirection: 'column',
+        images: [
+          getImage(VillaBajImage6.src, 'Dining room with long timber table, woven pendant light and a travertine bar beyond a patterned screen'),
+          getImage(VillaBajImage7.src, 'Light-filled wellness room with a timber shelving wall, yoga mats and a cactus garden beyond floor-to-ceiling glass'),
+        ],
+      },
+    },
+    { 
+      type: 'split',
+      align: 'top',
+      right: {
+        kind: 'image',
+        image:getImage(VillaBajImage8.src, 'Cross-section drawing of Villa Baj showing the pool and stacked living volumes')
+      },
+      left: {
+        kind: 'text',
+        paragraphs: []
+      }
+    },
+    // { type: 'centeredImage', image: getImage(VillaBajImage8.src, 'Cross-section drawing of Villa Baj showing the pool and stacked living volumes'), maxWidth: 1200 },
+    {
+      type: 'split',
+      align: 'top',
+      left: {
+        kind: 'imageWithText',
+        imagePosition: 'bottom',
+        image: getImage(VillaBajImage9.src, 'Bedroom looking out to a palm tree through floor-to-ceiling glass with a bronze-tinted glass wardrobe alongside'),
+        paragraphs: [
+          'Materiality plays a central role in shaping the atmosphere. Natural wood introduces warmth and familiarity, charred textures lend quiet elegance and permanence, and linen fabrics soften the geometry with tactile comfort. A palette of gentle, muted tones is carefully contrasted with warmer accents, creating a harmonious environment that feels both calm and vibrant — a setting where everyday life is elevated through thoughtful design.',
+          'More than a residence, the villa becomes a haven — a place where time slows, where memories accumulate, and where a renewed sense of home can take root. It stands as a contemporary sanctuary, protective yet welcoming, dignified yet deeply human, offering its inhabitants not only shelter but the confidence and comfort to build their future within it.',
+        ],
+      },
+      right: {
+        kind: 'imagePair',
+        flexDirection: 'column',
+        images: [
+          getImage(VillaBajImage10.src, 'Master bedroom with sheer curtains diffusing afternoon light onto a dark timber bed platform'),
+          getImage(VillaBajImage11.src, 'Bathroom with an open shower and a travertine double trough basin set into dark cabinetry'),
+        ],
+      },
+    },
+    { 
+      type: 'split',
+      align: 'top',
+      right: {
+        kind: 'image',
+        image: getImage(VillaBajImage12.src, 'Ground floor and site plan of Villa Baj showing the pool, gardens and parking')
+      },
+      left: {
+        kind: 'text',
+        paragraphs: []
+      }
+    },
+    // { type: 'centeredImage', image: getImage(VillaBajImage12.src, 'Ground floor and site plan of Villa Baj showing the pool, gardens and parking'), maxWidth: 1200 },
+    {
+      type: 'imagePair',
+      images: [
+        getImage(VillaBajImage13.src, 'Wine cellar with backlit timber racks flanking a long central tasting table'),
+        getImage(VillaBajImage14.src, 'Bar room with backlit shelves displaying wine and curated objects above a sculpted wood counter'),
+      ],
+    },
   ],
 };
 
